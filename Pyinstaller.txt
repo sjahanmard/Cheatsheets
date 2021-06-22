@@ -1,0 +1,11 @@
+Tutorials:
+https://pyinstaller.readthedocs.io/en/stable/usage.html
+
+Open the cmd
+give the location of the folder that ur file is in like below:
+type 'cd' then space and then drag and drop the folder into the cmd window
+then write this command:
+pyinstaller -w --onefile XXXXXX.py
+if U need to add additional files U need to change the command likes this:
+however it doesnt work for other py files and txt files ...
+pyinstaller -w --onefile --add-data "File3.txt;." --add-data "File2.txt;." XXXXXX.py

@@ -1,0 +1,191 @@
+Turorials:
+code examples for just a few topics to familiarize the reader:
+https://www.tutorialspoint.com/pyqt5/
+
+customizing:
+https://doc.qt.io/archives/qt-4.8/stylesheet-examples.html#customizing-a-qpushbutton-using-the-box-model
+
+search for any widget and U can have a list of all functions:
+https://doc.qt.io/qt-5/qcheckbox.html
+
+
+_______installing______
+for some reason installing through cmd does not work
+go to the website and download the packages and replace them where anaconda is installed
+https://anaconda.org/anaconda/pyqt
+install pqt5
+for the designer install it like this, other ways dont work
+pip install PyQt5Designer
+
+_____________from designer to code_________________
+go to the directory of the ui file saved from designer
+press cmd on the address:
+in the cmd shell write( ur file name is 'test.ui':
+pyuic5 -x test.ui -o test.py
+
+ 
+ 
+ __________________designer____________________________
+ Tutorials:
+https://www.tutorialspoint.com/pyqt5/
+https://doc.qt.io/qt-5/stylesheet-reference.html
+https://doc.qt.io/qt-5/stylesheet-syntax.html
+https://doc.qt.io/qt-5/stylesheet.html
+https://doc.qt.io/qt-5/stylesheet-examples.html
+
+ 
+ 
+ choosing a property for the stle sheet U needto type sth before it to have the
+ correct format, for example:
+ choosing a color wil give U a code like ############
+ then U need to write :
+ background-color:##############
+ 
+ a complete stylesheet for a button to use in the designer:
+ right click on the pushbutton and choose changestylesheet then paste this code there:
+##################################################### 
+ QPushButton {
+    color: #333;
+    border: 2px solid #555;
+    border-radius: 20px;
+    border-style: outset;
+    background-color:rgb(170, 255, 127);
+    padding: 5px;
+    }
+
+QPushButton:hover {
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+        );
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: qradialgradient(
+        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
+        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
+        );
+    }
+ ###########################################################
+ 
+ _________________________tricks_______________________________________
+ 
+ choosing a background color for a button or label or ... when U hover over it :
+ using style sheet:
+self.btncandice.setStyleSheet("QPushButton::hover"
+							"{"
+							"background-color :lightgreen;"
+							"}")
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ____________________click____________________
+ btn1.clicked.connect(self.function1)
+ if U want to give an argument as well, define it in the calling method and :
+ self.pushButton.clicked.connect(lambda:self.func1(1))
+
+ 
+ ________________messagebox____________________
+ define a button and create a function, then connect the button to the said function in
+ which U define the messagebox:
+ 
+ mb = QMessageBox()
+ mb.setWindowTitle('pop up box')
+ mb.setText('this is a message for U')
+ mb.setInformativeText(' information on it')
+ mb.setDetailedText('Details that are hidden with a button')
+ mb.setIcon(QMessageBox.Critical or Warning or Information or Question)
+ mb.setStandardButtons(QMessageBox.Ok|QMessageBox.Open) or Save, Cancel, Close, Yes, No
+ Abort, Retry, Ignore 
+ mb.setDefaultButton(QMessageBox.Ok)
+ 
+ mb.buttonClicked.connect(fnction1)-------- i is defined here to pass on the string that
+ is given to us when user clicks on one of the buttons:
+ def function1(self, i):
+	print (i.text())
+ 
+ x = mb.exec_()
+
+ __________________combobox_________________
+ self.cb1.addItem('hello')
+ setting the default item of combobox:
+ index = self.cb1.findText('1', QtCore.Qt.MatchFixedString)
+ self.cb1.setCurrentIndex(index)
+ 
+ self.button1.clicked.connect(self.function1)
+ def function1(self):
+	x = print (self.cb1.currentText())
+	
+ __________________________widgets_____________________
+ self.widget_2.setHidden(False) orrrrrrrrrrrr
+ self.widget_2.hide() and self.widget_2.show()
+ or U can use it for widgets inside widgets like Label or ...
+ ______________________tabwidgets_______________________
+ x =self.tabWidget.currentIndex()
+
+__________________groupbox____________frame_______________-
+they give U a frame in which U can put different widgets with the same properties as 
+color and font and ...
+the manin differencce is that with groupbox there is a line exposed around the gb
+and there is a title showing as well which there are no such things with frame
+U can put a gb in another gb 
+
+___________________inputdialog______________________
+done1 to done4 are returned as True if the user press ok but False if the user press False
+name, done1 = QtWidgets.QInputDialog.getText(self, 'Input Dialog', 'Enter your name:') 
+  
+roll, done2 = QtWidgets.QInputDialog.getInt(self, 'Input Dialog', 'Enter your roll:')  
+  
+cgpa, done3 = QtWidgets.QInputDialog.getDouble(self, 'Input Dialog', 'Enter your CGPA:')
+  
+langs =['C', 'c++', 'Java', 'Python', 'Javascript']
+lang, done4 = QtWidgets.QInputDialog.getItem(self, 'Input Dialog', 'Language you know:', langs)
+___________________input texts____________________
+QLine or line: how to get it after the user typed it in?
+self.linetext1.text()
+
+_________________checkbox_________________________
+
+self.x = self.checkBox.checkState()
+
+
+_______________database_______________________
+json data base:
+
+from urllib.request import urlopen
+import json
+import panda as pd
+
+with url open("https://opentdb.com/api.php?amount=50&category=26&difficulty=medium&type=boolean") as webpage:
+data = json.loads(webpage.read().decode())
+df = pd.DataFrame(data) ---- later on we see that we dont need all of the data so we choose data['results']
+how do we see that  we dont need it? by:
+print (df.head())
+print (df.columns)
+
+fixing the formatting:
+	    formatting = [
+        ("#039;", "'"),
+        ("&'", "'"),
+        ("&quot;", '"'),
+        ("&lt;", "<"),
+        ("&gt;", ">")
+        ]
+
+    #replace bad charecters in strings
+    for tuple in formatting:
+        question = question.replace(tuple[0], tuple[1])
+        correct = correct.replace(tuple[0], tuple[1])
+    #replace bad charecters in lists
+    for tuple in formatting:
+        wrong = [char.replace(tuple[0], tuple[1]) for char in wrong]
+        

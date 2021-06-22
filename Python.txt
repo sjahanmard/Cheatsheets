@@ -1,0 +1,266 @@
+___________________ Modlues______________________________
+import datetime
+	datetime.datetime.today().seconds
+from datetime import datetime
+	datetime.today.now()
+	when U write a datetime on a file it will become string , so to change it 
+	back you need to give the original format to it to get back to that type
+	of file:
+	c=datetime.datetime.strptime(a, '%Y-%m-%d %H:%M:%S.%f')
+	https://docs.python.org/3/library/datetime.html
+
+import time
+	time.sleep(5)
+import random
+	random.randint(1,60)
+	random.shuffle(list1)
+import math
+	math.log(a)
+	math.sin(a)
+	math.pi
+	math.ceil(0.2) = 1
+	math.floor(0.9) = 0
+import numpy
+
+______________________ commands________________________________
+w = input('yek kalame benevis')
+b = list('salam')
+newphrase=''.join(phlist[1:3])
+a.append(b)
+phlist.pop(0) --------------- it also represents the value that is removed
+phlist.remove('salam')
+phlist.insert( 6 , phlist.pop())
+a.extend([50,400,100])
+b = a.copy
+letters(23 : 4 : -2) ----------- it means from letter 23 to letter 4 with steps of -2
+lists:
+a = [[1,2,3],4,5]
+	a[0][1] = 2
+dictionary:
+	foundP{}
+	for letter in w:
+		if letter in v:
+			found.setdefault(letter , 0)
+			found [letter] += 1
+
+	for k , v in found.items():
+		print (k , 'was found', v, 'time(s)')
+
+	sorted(found)
+	people={}
+	people[‘maryam’] = { ‘gender’:’female’ , ‘height’:175, ….. }
+	people[‘Maryam’][‘gender’]
+	c={}
+	c.update({'b':1})
+set:
+	A = set('salam') = {‘s’, ‘a’, ‘l’, ‘m’}
+	found = v.intersection(b)
+	found = v.union(b)
+	found = v.difference(b)
+c , b = a.split() or c , b = a.split('s') ---------- it only works if a is string
+bool(1) = T , bool(0) = bool([]) = F
+divmod(1201,100) = (12,1)
+assert 2*2=1 --------- if this is not true the AssertionError will be raised
+ 
+
+________________tricks______________
+def functiona(n:int) -> int:
+	if not isinstance(n, int)
+		print ('salam')
+	elif n<0:
+		print ('nasalam')
+	else:
+		return n
+
+Tries the Try, if fails goes to except, if could goes to else
+try:
+    f = open('myfile.txt')
+    s = f.readline()
+    i = int(s.strip())
+except OSError as err:
+    print("OS error: {0}".format(err))
+except ValueError:
+    print("Could not convert data to an integer.")
+except:
+    print("Unexpected error:", sys.exc_info()[0])
+else:
+	pass
+    
+def func1(*args) or finc1(a , *args):
+    for arg in args:
+        print(arg)
+        
+def func2(**kwargs):
+    for k, v in kwargs.items():
+        print('%s == %s' %(k, v))  
+
+to remove \n : U can use either strip() or split()
+strip() to remove whitespaces
+
+________________printing_________________
+print('\t', a)
+import pprint
+pprint.pprint(a)
+‘(%g, %g)’ %(a, b) = ‘ (a, b)’
+ print('%.2d:%.2d:%.2d' % (t.saat, t.daghighe, t.sanie))
+print(f'password taeen shode tavasote shoma: {password}')
+
+
+
+
+__________________writing modules____________________
+1.create a’README.txt’ file
+2.write your module and name it for example ‘vowelsearch’. In the same place as the ‘README’ file.
+3. create another file and write this in it in the same locaton:
+from setuptools import setup
+setup(name = 'vowelsearch', version = '1.0', py_modules = ['vowelsearch, search_for_letters, … '])
+4.Run windows cmd:
+D: ( the location drive) : cd XXXXXX: drag and drop the foler
+>cd D:sadasdasd/asd/asd/asd/asd/as/dasd>py -3 setup.py sdist
+
+
+
+https://stackoverflow.com/questions/2349991/how-to-import-other-python-files
+easier way:
+write  a file test1111
+in the main file U should first:
+import test1111
+and then call the function in it like :
+test1111.function(a)
+__________________installing modules________________
+>cd D:sadasdasd/asd/asd/asd/asd/as/dasd/dist>py -3 -m pip install name of the zipped file
+then U can import the module as U wish and use it like
+vowelsearch.search_for_letters(…)
+
+________________by value or by reference________________
+what happens in functions after they are done?are the arguments’ values changed or are they the same as the beginning?
+str, int, tuple = stay the same
+List, dic, set = If they are assigned (=)			stay the same
+		      If they use a.append() and … 		they will change 
+		      
+		      
+example:
+a= [1 , 2]
+def boos(a):
+    a=[1,2,3]
+    a.append(4)
+    print (a)
+boos(a)
+print (a) >>>>>>>>>>>>>>>>>>>[1, 2, 3, 4] ,[1, 2]
+
+a= [1 , 2]
+def boos(a):
+    a=[1,2,3]
+    print (a)
+boos(a)
+print (a) >>>>>>>>>>>>>>>>>>>[1, 2, 3] ,[1, 2] 
+
+a= [1 , 2]
+def boos(a):
+    a.append(4)
+    print (a)
+boos(a)
+print (a) >>>>>>>>>>>>>>>>>>>[1, 2, 3, 4] ,[1, 2, 4]
+
+although U can assign a list of the objects of the class outside of the class
+and then assign it inside and use it outside and there will be no problem 
+i,e: using instance=[]
+
+
+
+
+__________________Pycodestyle or pep8__________________
+Run anaconda prompt
+Go to the location of the file and copy it below 
+Type >cd D:sadasdasd/asd/asd/asd/asd/as/dasd>pycodestyle vowelsearch.py
+
+
+__________________object oriented programming or classes______________
+class Shomaresh:
+    def __init__(self, v: int=0, i: int=1) -> None:
+        self.val = v
+        self.incr = i
+    
+    def afzayesh(self) -> None:
+        self.val += self.incr
+
+__str__
+__ge__
+__add__
+__rad__
+inheritance: methods are inherited by offsprings. The format is like this:
+Class a:
+	…
+	…
+Class b(a)
+	….	
+	….
+
+
+___________read and write excel files__________________
+import xlrd
+esme_file = 'data1.xlsx'
+wb = xlrd.open_workbook(esme_file)
+sh = wb.sheet_by_index(0)
+for i in range(sh.nrows-1):
+    for j in range(sh.ncols):
+     print(sh.cell_value(i+1,j))
+
+
+
+from xlwt import Workbook
+wb = Workbook()
+sh1 = wb.add_sheet('Sheet 1')
+sh1.write(0,0,125)
+sh1.write(2,4,'salam')
+wb.save('data2w.xls')
+
+
+__________________________read and write text files_____________________
+masire_file = 'D:\FaraDars.org\T1365\FVPHT9407\source\codes\data1.txt'
+with open(masire_file , ‘w’ or ‘r’ or ‘r+’ or ‘a’) as f:
+    mohtaviat = f.read()
+    khotut=f.readlines()
+    print(mohtaviat)
+
+
+
+
+esme_file = 'data3w.txt'
+with open(esme_file, 'a') as f:
+    f.write('Faradars Python python\n')
+    f.write('barnamenevisi be zaban python python\n')
+    f.write('111111125458711111\n')
+
+
+
+________________load and dump jason files_________________________
+import json
+with open ('file2.json' , 'w' ) as f:
+json.dump( list1 , f)
+
+
+with open ('file2.json' ) as f:
+list1 = json.load(f)
+
+on json files U can write lists , dictionaries and all other things
+but remember if U write a dic with number keys , it will convert those numbers 
+into strings of those numbers
+
+_________________lambda___________________________
+def myfunc(n, m):
+  return lambda a : a * n * m
+
+mydoubler = myfunc(2 , 3)
+
+print(mydoubler(11))
+
+
+for example somewhere we are asked to give one function without argument
+but we want to give it a function with many arguments 
+here we can just use lambda likeL:
+(return lambda: self.func(a , b , c ))
+
+___________________super____________________
+https://www.programiz.com/python-programming/methods/built-in/super
+https://rhettinger.wordpress.com/2011/05/26/super-considered-super/

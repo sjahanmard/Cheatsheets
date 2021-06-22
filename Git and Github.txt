@@ -1,0 +1,41 @@
+___________________________Git____________________________________
+https://www.notion.so/Introduction-to-Git-ac396a0697704709a12b6a0e545db049
+
+git init
+git status
+
+git add file.js file2.js file3.js
+git add .
+
+git commit -m "Commit message"
+
+git log
+
+git checkout <commit-hash>
+git checkout master ------------------- last checkout
+
+branches:
+to see the branches: git branch
+to create a new branch: git branch <new-branch-name>
+to swtich the branches: git checkout <branch-name>
+go back to the master: git checkout master
+for merging ur branch with another, go to the main branch and then:
+git merge <branch-name>
+
+delet a branch:
+git branch -d <branch-name>
+___________________________Github____________________________________
+
+https://www.notion.so/Introduction-to-GitHub-202af6f64bbd4299b15f238dcd09d2a7
+
+
+
+
+
+Using the application and the website to sync:
+first U need to set up ur repository in the browser
+then U can used the URL to set up ur desktop application
+then just for the first time when making the changes to the local folder U have to
+run the cmd in that location and (git push -u origin main) to send it to the browser
+after checking the authentication , the desktop app and the browser are synced and everytime 
+U change anything in the app , the browser version changes as well

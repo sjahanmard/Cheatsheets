@@ -1,0 +1,199 @@
+Tutorials:
+https://www.tutorialspoint.com/python/python_gui_programming.htm
+
+
+_____________main commands________________________
+from tkinter import *
+win = Tk()
+win.mainloop() --------- at the end
+
+
+_____________creating the window________________________
+win.title()
+
+
+_____________widgets________________________
+lb = Label (win , text = 'Hi' , textvariable = var,
+	 font = ('mitra',25, 'bold'), wraplength = 200
+	bitmap = 'error' or 'question' ...)  
+	Label.config(image = jpg, compound = 'right')
+	Label.pack()
+	
+btn = ttk.Button()
+btn = Button(win , text = 'Hi' ,bg , fg , bd ,
+	activebackground, activeforeground
+	command, font, image ,
+	padx , pady : (additional padding to the side of the text)
+	ipadx, ipady: (inside the borders and the text inside the button) 
+	relief : (Relief specifies the type of the border.
+	Some of the values are SUNKEN, RAISED, GROOVE, and RIDGE.)
+	state: ('disabled' or 'normal')
+	width , wraplength
+		invoke()
+cbtn = CheckButton (win ,  variable = var , onvalue = 'y' , offvalue = 'n')
+
+Rbtn = RadioButton ( win , variable = var , value = 'sad')
+
+text = Text(win ,width , height , ...
+	xscrollcommand and yscrollcommand with set() and Scrollbar())
+
+			text = Text ( win , width=10, height=5)
+			sc= Scrollbar(win , command=text.yview)
+			text.config(yscrollcommand=sc.set)
+			text.pack(side='left')
+			sc.pack(side='right', fill='y')
+	text.tag_add('blue' , 1.0 , 1.4)
+	text.tag_config('blue' , background = 'blue' , ...)
+sc = Scrollbar(win , command=text.yview)
+
+en = Entry(win ,width =15, show='*')
+	U have to retrieve what is written in the Entry with get: self.ent1g = self.ent1.get()
+lb = Listbox ( win, selectmode= 'multiple')
+	lb.insert(0 or 'end', 'python')
+	values = [lb.get(i) for i in lb.curselection()]
+	print(''.join(values))
+	
+sb = Spinbox (win , from_=1, to=10, or values =(1,2,3) )
+	sbv = sb.get()
+	
+menubar = Menu(win)
+	win.config (menu=menubar)
+	
+	filemenu = Menu(menubar, tearoff=0)
+	editmenu = Menu(menubar, tearoff=0)
+	recent = Menu(editmenu, tearoff=0)
+	
+	filemenu.add_command ( label='open' , command = 'donothing')
+	editmenu.add_command (label = 'copy' , command = 'donothing')
+	editmenu.add_separator()
+	recent.add_command(label = 'salam' , command = 'donothing')
+	
+	
+	menubar.add_cascade(label='File', menu=filemenu)
+	menubar.add_cascade(label='Edit' , menu = editmenu)
+	editmenu.add_cascade(label = 'greetings' , menu = recent)
+	
+	
+OptionMenu
+	var=IntVar()
+	om = OptionMenu(win , var , 1 , 2, 3)
+	om.pack(side = 'bottom')
+	b= var.get()
+
+messagebox (showinfo, showerror, showwarning, askquestion, askokcancel)
+	from tkinter import messagebox
+	def hello():
+		messagebox.showinfo('Hi', 'How are you?')
+	btn = Button(win , text = 'talk' , command =hello)
+	btn.pack()
+	
+c = Canvas( win , width = 400 , height = 400 , bg = 'blue' , ....)
+
+frame = Frame (win , bd= 5 , relief ='sunken')
+	frame.pack(fill ='x' , padx = 15 , pady = 15) #pads are for the frame itself
+	btn= Button(frame , text= 'click' , command = 'donothing' )
+	frame.config(padx = 20 , pady=20)		#pads are for the objects inside the frame
+
+lb = LabelFrame (win , text = ' this is writte on the label', label anchor = 'n' or sw or ws or ...)
+	lf.pacl(fill='x')
+	
+Toplevel()
+	def openabout():
+		top = Toplevel()
+		top.title('about')
+		lb = Label (top , text = 'hey guys')
+		btn = Button (top , text = quit, command = top.destroy)
+		lb.pack()
+		btn.pack()
+	btn1 = Button (win , text = 'about' , command = openabout).pack()
+
+sc = Scale( win, from_=0, to = 100 , orient = 'horizontal')
+	sc.set(40)
+	sc.pack()
+	def show_value():
+		print (sc.get())
+	btn = Button (win , text = 'done' , command = show_value)
+	btn.pack(side = 'bottom')
+dialog
+	from tkinter.filedialog import askopenfilename
+	def callback():
+		name = askopenfilename(filetypes = (('Text File' , '*.txt'), ('All Files' , '*.*')))
+		print (name)
+	btn4 = Button(win ,text = 'open' , command=callback)
+	btn4.pack()    
+
+Progressbar
+	from tkinter import ttk
+	pb = ttk.Progressbar(win)
+	pb.pack()
+	pb.config(mode='determinate' , maximum = 100 , value = i, step = 5)
+	pb.update() or pb.start() or pb.stop()
+	
+Combobox (similiar to Menubutton)
+	from tkinter import ttk
+	cb = ttk.Combobox (win , values = ('pizza , 'salad' ), state = 'readonly')
+	cb.pack()
+	cb.get()
+
+Treeview
+	from tkinter import ttk
+	tree = ttk.Treeview (win)
+	tree.pack()
+	tree.insert('', 'end' , 'id1', text='potato')
+	tree.insert('', 'end' , 'id2', text='apple')
+	tree.insert('1', 'end' , 'id11', text='fried potato')
+	tree.config (columns = ('#0' , '#1' , '#2'))
+	tree.column ('c1' , width = 200)
+	tree.heading ('c1' , text = 'food')
+	tree.set ('id11' , 'c1' , 'salam chetori')
+	tree.column (c1 , anchor = 'center')
+
+
+__________________geometry_________________________
+pack
+grid
+	btn.grid (row=0 , column=1 , columnspan = 2 , padx , pady , width)
+geometry
+	win.geometry('200x200')
+	btn = Button (win , text = 'click')
+	btn.place (x=10 , y= 10 orrrrr relx=10 , rely=10)
+ full screen window or top or ....:
+	 topl.geometry("{0}x{1}+0+0".format(win.winfo_screenwidth(), win.winfo_screenheight()))
+
+__________________events_________________________
+Button-1 or 2 or 3 or nothing (left - middle - right)
+	btn = Button (win , text='click')
+	btn.pack()
+	def click(e):
+		print ('stop')
+	btn.bind('<Button-1>', click)
+		unbind
+				Motion
+				B1-Motion
+				ButtonRelease-1
+				Double-Button-1
+				Enter
+				Leave
+	win.bind('<ButtonRelease-1>' , lambda e: print ('stop'))
+				Delete
+				Control-x
+				Return
+				
+				
+
+
+
+
+_____________functions or classes built in________________________
+var = StringVar() or IntVar() or DoubleVar()
+var.set('I am Reza')
+jpg = PhotoImage (file = 'C:/Users .......')
+var.get()
+text.pack( side = 'left' , fill = 'y')
+win.destroy or top.destroy or ...
+win.resizable (False, False) , maxsize , minsize
+win.withdraw()
+_____________________tips________________________-
+when changing some data that is showin in a list or tree or ... we need to 
+pack.() that tree or list or ... to make sure that it is showing the updated data 
+without reloading the program
