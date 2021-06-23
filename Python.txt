@@ -23,6 +23,7 @@ import math
 import numpy
 
 ______________________ commands________________________________
+no equal : !=
 w = input('yek kalame benevis')
 b = list('salam')
 newphrase=''.join(phlist[1:3])

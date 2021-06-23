@@ -41,10 +41,12 @@ https://doc.qt.io/qt-5/stylesheet-examples.html
  then U need to write :
  background-color:##############
  
+ ___________________button____________________________________
  a complete stylesheet for a button to use in the designer:
  right click on the pushbutton and choose changestylesheet then paste this code there:
 ##################################################### 
- QPushButton {
+self.btn1.setStyleSheet()
+QPushButton {
     color: #333;
     border: 2px solid #555;
     border-radius: 20px;
@@ -67,8 +69,57 @@ QPushButton:pressed {
         radius: 1.35, stop: 0 #fff, stop: 1 #ddd
         );
     }
+
  ###########################################################
- 
+     or just copy this to the code:
+             self.pushButton.setStyleSheet("QPushButton {\n"
+                                        "    color: #333;\n"
+                                        "    border: 2px solid pink;\n"
+                                        "    border-radius: 20px;\n"
+                                        "    border-style: outset;\n"
+                                        "    background-color:rgb(170, 255, 127);\n"
+                                        "    padding: 5px;\n"
+                                        "    }\n"
+                                        "\n"
+                                        "QPushButton:hover {\n"
+                                        "    background: qradialgradient(\n"
+                                        "        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+                                        "        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+                                        "        );\n"
+                                        "    }\n"
+                                        "\n"
+                                        "QPushButton:pressed {\n"
+                                        "    border-style: inset;\n"
+                                        "    background: qradialgradient(\n"
+                                        "        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+                                        "        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+                                        "        );\n"
+                                        "    }")
+     
+###########################################################
+
+     
+font = QtGui.QFont()
+font.setPointSize(24)
+font.setBold(True)
+font.setWeight(75)
+self.pushButton.setFont(font)
+
+
+after each time a button is used , it should be disconnected because data is stored
+	in it. If not it will act two times upon clicking and that would be troublesome:
+    self.btn4.clicked.disconnect()
+
+
+ _______________________labels____________________________
+self.lbscore.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignHCenter)
+self.lbscore.setAlignment(QtCore.Qt.AlignBottom)
+
+self.lbscore.setStyleSheet('color:black;border-radius: 35PX;background-color:pink;border: 2px solid purple')
+
+
+
+
  _________________________tricks_______________________________________
  
  choosing a background color for a button or label or ... when U hover over it :
@@ -89,10 +140,13 @@ self.btncandice.setStyleSheet("QPushButton::hover"
  
  
  ____________________click____________________
- btn1.clicked.connect(self.function1)
+ self.btn1.clicked.connect(self.function1)
  if U want to give an argument as well, define it in the calling method and :
  self.pushButton.clicked.connect(lambda:self.func1(1))
 
+how to pass values when clicking a button???? and find the sender
+	        self.btn1.clicked.connect(lambda: self.checking('salam'))
+	this way when U click btn1 it gives the 'salam' to checking method and U can track the sender
  
  ________________messagebox____________________
  define a button and create a function, then connect the button to the said function in
@@ -129,6 +183,7 @@ self.btncandice.setStyleSheet("QPushButton::hover"
  self.widget_2.setHidden(False) orrrrrrrrrrrr
  self.widget_2.hide() and self.widget_2.show()
  or U can use it for widgets inside widgets like Label or ...
+ setFixedSize(400,200)
  ______________________tabwidgets_______________________
  x =self.tabWidget.currentIndex()
 
@@ -163,9 +218,9 @@ json data base:
 
 from urllib.request import urlopen
 import json
-import panda as pd
+import pandas as pd
 
-with url open("https://opentdb.com/api.php?amount=50&category=26&difficulty=medium&type=boolean") as webpage:
+with urlopen("https://opentdb.com/api.php?amount=50&category=26&difficulty=medium&type=boolean") as webpage:
 data = json.loads(webpage.read().decode())
 df = pd.DataFrame(data) ---- later on we see that we dont need all of the data so we choose data['results']
 how do we see that  we dont need it? by:
