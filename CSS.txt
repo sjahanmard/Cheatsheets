@@ -1,0 +1,361 @@
+#to add the css file ot the html , in head we add:
+<link rel="stylesheet" href="/style.css">
+
+#now if U want to call h1 h2 body or head U just type the name
+for classes U say .class1 and for ids U type #tablepassword:
+#tableuspw {
+  color: rgb(226, 185, 21);
+}
+
+#U can also use them in combination like:
+.random h1{}
+
+#how to target sth below sth else. by adding + symbole and it will show us:
+.mylist + ul {}
+
+#ul >li{}
+it means the lis which have a ul parent
+
+#choosing based on the secuence. in the following example the second listed item will be chosen:
+
+.class1 li:nth-child(2){}
+
+#priority: inside html>id>class>element itself and the thing is written below overwrites others
+1 thing has more priority:
+#tableuspw {
+  color: rgb(226, 185, 21) !important;
+}
+
+
+#margins and paddings
+tableuspw {
+  margin: 30px;
+  padding: 30 px;
+}
+tableuspw {
+  margin: 30px 30px 30px 30px;
+  padding: 30 px;
+}--------------------------------------------(top right bottom left)
+tableuspw {
+  margin: 30px 40px;
+  padding: 30 px;
+}----------------------------------------------(top and bottom , right and left)
+
+or u can just use:
+padding-left:30px
+and U can set the margin to auto as well: margin:auto
+
+#font. % and rem to use instead of px. first set the html font size to 62.5 and then 10px = 1 rem
+html {
+  font-size: 62.5;
+}
+.text {
+	font-size = 1.6 rem;
+}
+
+#button: margin ;padding ;  background ; border:0.1 solid blue; font-size = border-radius:50%
+border-top-left-radius ; color
+
+button:hover {
+  background: chartreuse;
+}
+
+when the button is selected , its gonna change its color:
+button:focus {
+  background: chartreuse;
+}
+#input
+input:focus {
+  background: chartreuse;
+}
+
+
+# U can add a background to a text or anchor or ... as well
+
+#block / line: anchors are in line for example , they come next to each other instead of 
+on top of each other
+
+# a {
+  display: block;
+  background: blueviolet;
+  text-align: start,end,center
+}
+
+
+a {
+  display: inline-block;
+  background: blueviolet;
+  text-align: center;
+}
+
+
+#if U want to use all the height and for example half of the width U can do it like this:
+html,body{
+	heigh:100%
+	width:50%
+}
+
+
+# .box1,.box2,.box3 {}
+
+#positioning:static is the default. absolute: ------ in this example the box sticks to bottom left (0 is the distance between the element and the said border)
+.box1{
+	position: absloute;
+	bottom: 0 rem
+	left:0rem
+}
+
+if we write it like this the top left corner of the box will be at the center but we can
+add a like to make the center of the box be placed on the given coordinates
+.box1{
+	position: absloute;
+	bottom: 50% ;
+	left:50%;
+	transform: translate(-50%,-50%;
+}
+position relative:
+if U wanna contain an element in sth else , U should make that else its parent and then
+given position:relative to that. This way all the elements inside that parent are going
+to be stuck inside of it.
+
+position:fixed ---- the element gets stuck on our window when we scroll
+position sticky should be used with top:0% , it switches from relative to sticky when 
+scrolling down
+
+
+#adding content from css before and after the content
+h1::after{
+content:"sal"
+}
+we can also use before as well here
+
+
+
+#text-decoration:none
+background-image url()
+background-size:cover -------------- it covers the page and keeps changing ....
+background-position: center
+text-align:center
+text-shadow:3px 3px 3px black ( left or right , up and down , radius)
+cursor:pointer
+
+we also have box-shadow
+
+#google fonts: add it to your css like this
+ @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
+# * is the universal selector
+
+
+#box-sizing: border-box ----------it allows us to set the amount in disregard with
+ the margins and paddings
+ 
+#  font-family: 'Lato', sans-serif;
+	 this way if Lato is not supported by our browser , it will switch to sans-serif
+#.navbar ul {
+  display: flex;
+}
+this way it will show the navbar list in a line next to each other we can change it to
+the following to be displayed in a column.
+#.navbar ul {
+  display: flex;
+  flex-direction: column;
+}
+
+#display flex
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+align items is vertical whereas justify-content is horizontal although if we add
+  flex-direction: column;
+then because the main access is column , the roles would be reverse, as align-items
+would be horizontal
+
+ 
+# <input type="text" name="name" placeholder="Name" required>
+by adding required , the input will  have to be to submit
+
+#defining a variable with for example a color assigned to it: at the top of the code:
+
+:root {
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+}
+
+and we can call it in the code like this:
+
+ background-color: var(--primary-color);
+
+# we can use fraction of the container as a unit as well : 2fr 1fr meaning the 
+first item will take 2 out of 3 and the second one will take 1 out of 3
+U can also give percentages for example u have 2 items:
+	grid-template-columns: 55% 45%;
+
+
+#display grid 
+
+.grid {
+	display:grid;
+	grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap:20px;
+    justify-content; center;
+    align-items; center;
+    height:100%
+}
+
+ooor 	grid-template-columns: repeat(2,1fr);
+
+
+#if sth goes out of its container U can set the overflow to visible to make the scrollbar
+go away and it will stick out of it visibly
+
+
+#priority of showing is defined with z-index . the higher its is it will be shown
+z-index:100;
+
+#.showcase-form input[type='text'],
+to target 1 type from a class
+
+#.showcase-form input : focus { outline: none;}
+# .btn : hover {transform: scale(.9)}
+# make a card come up when we hover over and adding a transition:
+.languages .card {
+  text-align: center;
+  margin: 18px 10px 40px;
+  transition: transform 0.2s ease-in;
+}
+
+.languages .card:hover {
+  transform: translateY(-15px);
+}
+
+#background-color: transparent;
+
+# how to make a box with a diognall line?? that's a full box with another colorless box
+that is being put on top of it like this:
+
+.showcase::before,
+.showcase::after {
+  content: '';
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+    !!!!!!for google and safari
+  -webkit-transform: skewY(-3deg);
+  !!!!!!for firefox
+  -moz-transform: skewY(-3deg);
+  !!!!!!for microsoft
+  -ms-transform: skewY(-3deg);
+}
+
+ # how to use grid and merge cells inside of it (span):
+ /* Cli */
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+in this scenario the first item will be put in 2 columns and 2 rows 
+
+#select all the occurences of one word (repeated) by : ctrl+d
+
+#when the browser gets smaller we want the content to go to the bottom of each other
+we can use this in a flex mode with:
+.languages .card {
+	flex-wrap: wrap;
+}
+
+
+
+#for tablets and mobiles we have to redefine sths since they are gonna look weird in
+smaller screens, so:
+/* Mobile */
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+}
+
+
+
+/* Tablets and under */
+@media (max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid,
+  .features-main .grid,
+  .docs-main .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }  
+}
+
+
+#to push sth to the end in a grid
+justify-self: flex-end
+
+
+#The <pre> tag in HTML is used to define the block of preformatted text which 
+preserves the text spaces, line breaks, tabs, and other formatting characters
+ which are ignored by web browsers. Text in the <pre> element is displayed in
+  a fixed-width font, but it can be changed using CSS.
+  
+ #The <code> tag is used to define a piece of computer code. The content inside
+  is displayed in the browser's default monospace font. 
+  
+  
+  #animations
+  
+  @keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+    animation: slideInFromTop 1s ease-in;
+  }
+  
+  
+  #.hidden {
+  visibility:hidden;
+  height:0
+  }
+  
+  

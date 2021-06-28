@@ -1,0 +1,153 @@
+#t start the code just type "!" and press enter and the following will be appeared:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobhan the Supercoder</title>
+  </head>
+  <body></body>
+</html>
+
+#how to change the icon of the tab that is showing a globe: 
+in the head add:
+    <link
+      rel="icon"
+      href="https://img.icons8.com/ios-filled/50/000000/cloud-arrow-left.png"
+    />
+    
+#h tags and p tags which go into the body:
+h1 and h2 and h3 and h4 and h5 and h6. the difference is their importance so , for instance 
+you write a title in h1 and sub titles in h2 and ...
+p stands for paragaph 
+
+#we can distinguish some part of a text like this: we have i & strong & small and ...
+    <p>This is the best sport <i> in the</i> world</p>
+
+#good websites are pixels, and icons8 and iconmonstr
+
+#images from the computer or url, url gives an error at the bottom of the pic though:
+<img
+      src="Images/31600558&domainId=12.jpg"
+      alt="Image was not founds duuuuude!!"
+      width="1000"
+      height="2000"
+    />
+
+#video: as U see U can add the source in 2 places , the second one is to emphasize the video
+format:
+<video src=""
+width=
+height=
+autoplay
+controls
+>   source src="" type"vide.mp4"
+</video>
+
+#to take the user to another website we use anchor or a :
+<a
+      href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"
+      >Link to the other side is in this text</a
+    >
+if U want to open it in another tab U should use target="_blank"
+and if U want to add an image instead of the text as a button U should do it like this by 
+image tabing in place of the text:
+<a
+      href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"
+      target="_blank"
+      ><img src="/Images/iconmonstr-bus-4.svg"
+    /></a>
+    
+#form defined in the body. inside of it we have input. and label. input has types like (text or email or.
+buttons(types like submit). we can use action in form to navigate to other pages as well.
+also giving a name to an input is necessary since if we try to use that input again, it's gonna 
+be saved in that variable. max and min length for input. autocomplete for input or form itself. 
+
+	<form action="https://www.youtube.com/results?search_query=How+to+install+Python+Libraries+in+Visual+Studio+Code">
+      <label for="username">type ur username please </label>
+      <input name="karbar" type="text" id="username" maxlength="5" minlength="2" autocomplete="off"/>
+    </form>
+    
+#form. select ( or dropdown list).
+ then we have textarea
+#placeholder text in inputs.
+<input placeholder="type the password here"/>
+#radiobuttons
+<form>
+	<input type="radio" name products value="1" />
+	<input type="radio" name products value="2" />
+	<input type="radio" name products value="3" />
+	<input type="radio" name products value="4" />
+</form>
+
+
+
+#buttons are added using 2 methods:
+
+      <input type="submit" value="send"> </input>
+      
+      <button type="submit">بکوب لایکو</button>
+
+
+
+
+#list (ul and ol) defined in the body. U can also have lists inside of lists.
+U can also anchor it to another link
+
+
+
+<ul>
+      <li>salam</li>
+      <li>khodafez</li>
+    </ul>
+
+#tables we have tr and th and td in them which represent rows and heads and data:
+
+    <table>
+        <tr>
+            <th>usernames</th>
+            <th>passwords</th>
+        </tr>
+        <tr>
+            <td>sobhan</td>
+            <td>jahanmard</t>
+        </tr>
+    </table>
+    
+# classes and ids:
+whenever we make an object its best to give it a class an id if we wanna specify that later on.
+U cant have spaces in classes. but an object can be in two classes like below:
+	<table class = "table important" id = "tableuspw">
+    </table>
+table is of classes table and important ( 2 classes)
+
+#div to rap around objects and make them organize , a container
+    <div>
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+    </div>
+#others like div, containers, with semantic names:
+header
+nav
+section
+footer
+figure
+main
+
+aside : it's on the side of the page
+
+
+#figure , when U wanna add an image put it inside a figure and U can give it a caption:
+    <figure>
+        <img src="" alt="">
+        <figcaption>this is a painting by picasso</figcaption>
+    </figure>
+# U can give min and max width for the classes as well
+
+#htlm entities , corroputed format, alternative letters:
+some letters U can not write in html so they have alternatives, check the link below:
+https://www.w3schools.com/html/html_entities.asp
+
