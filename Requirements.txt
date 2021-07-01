@@ -12,7 +12,7 @@ imports in the react files:
 	import React from 'react'       in all the pages
 	import other pages in  App.js like:
 		import Person from "./Person"
-		
-	
+	import {Route, BrowserRouter as Router, Link} from 'react' in App.js
+	first instal dom by : yarn add react-router-dom
 	
 	
