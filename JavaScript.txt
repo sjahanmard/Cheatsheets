@@ -1,0 +1,215 @@
+#variables:
+	undefined null boolean string symbol number object
+#defining variables:
+	var myName = "Beau" 
+	let ourName = "boos"
+	const pi = 3.14
+	U cannot change const after defining but var and let could be changes:
+		although with the use of brackets its possible:
+		a[0]=2 like this but setting a=[1,32,5] is not possible
+	though let only exist within the scope that it is defined 
+	with let U cannot redefine a variable in the same scope, error will pop up
+#incrementing:
+	myvar=myvar+1   orrrrrrrrrr mywar++
+	myvar=myvar-1   orrrrrrrrrr mywar--
+	a = a+12 orrrrrrrrrrr a += 12
+	a = a-12 orrrrrrrrrrr a -= 12
+	a = a*12 orrrrrrrrrrr a *= 12
+	a = a/12 orrrrrrrrrrr a /= 12
+
+
+#var remainder;
+	remainder = 11 % 3;
+	gives U the remainder of the division. U can check if a number is even or odd by dividing 
+	by 2
+ 
+ -------------------------------- 21:00 --------------------------------------
+	
+#quotation in strings: use backslash \"
+	var myStr = " I am a \"boos\" here"
+	or start and end your strings with "<>"
+	or use ' and "
+	
+	at time 26:00 code inputs like \n and ...
+# length
+	var = firstName="sobhan";
+	firstNameLength = firstName.length;
+# getting the last item:
+	var sob = "salam";
+	var str = sob[sob.length - 1];
+# arrays
+	var ourArray = ["salam", 23]
+# nested arrays
+	var ourArray = ["salam", [1, 3, 23]]
+# ourArray[1][0]  is 1
+# push array : adding new items to the arrays:
+	var ourArray = ["salam", [1, 3, 23]];
+	ourArray.push("dodo")
+	ourArray = ["salam", [1, 3, 23] , [dodo]]
+# remove the last item from array with pop()
+	ourArray.pop() 
+# U cannot use these push and pop and ... on string like U could in python
+#remove the first item from array with shift()
+	ourArray.shift() 
+#unshift adds an element to the beginning of an array:
+	ourArray.unshift("happy")
+#scopes of variables
+	defining with var:
+	if defined outside of a function , its scope is global
+	if it is defined in a function , its scoped to that function only
+	however if we don't use var to define and only say "myVar=10" then the scope is 
+	set globally
+# variables with the same name
+	priority is with the local variable over the global one
+
+#how to get a variable out of a function? assign a variable to the returning object like below
+	var changed = 0;
+	function change(num) {
+		return num + 5;
+	}
+	changed = change(10);
+# how change array into strings so that we can console.log() them:
+	testArr = [1, 2, 3];
+	JSON.stringify(testArr)
+#booleans are like python true and false ...
+
+# if statements:
+	if (.....){
+		return .....;
+	}
+# strict equality === , does not convert at all
+	3=='3' is correct but 3==='3' is incorrect
+#inequality operator: !=
+#strict inequality operator: !==
+# and in if clauses : &&
+	if (a==b && c==4){}
+# or in if clauses: ||
+
+#	if (a==b && c==4){
+}else{
+}
+#	if (a==b && c==4){
+}else if (d=8){
+}
+# switch: U always have to break otherwise it will keep on going
+function boos(var) {
+	var answer ="";
+	switch (val) {
+		case 1:
+		case 2:
+			answer ="low";
+			break;
+		case 3:
+		case 4:
+			answer = "mid";
+			break;
+	}
+}
+#objects are like dictionaries in python:
+	var person = {
+	"name" :"sobhan",
+	"lastname" : "jahanmard"
+	};
+	this is how we access the data:
+	person.name       orrrrrrrr
+	person["name"]
+#delete or remove properties from our object:
+	delet person.name
+# has own property method:
+	person.hasOwnProperty(checkprop) ----- gona be return for name for example
+	we need to put this in a function and use it like that 
+# making a copy of ur object:
+	var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+# name = name || []
+	it means if name exist , that's fine , if it doesn't, assign [] to it
+# while (i<0) {
+....
+i++
+}
+#for (var i=0; i<5; i++){
+}
+# do while loops: it runs the loop one time and after that checks the conditon
+	 do {
+	....
+	i++
+	} while (i<0)
+#math.random() ---------- gives a random between 0 and 1 but not 1
+	math.floor() rounds down
+	math.floor(math.random() *20+1) gives between 1 and 20
+	
+# converting strings into integers:
+	parseInt("56")
+#ternary operatior:
+	function checkEqual(a,b){
+		return a===b ? true : false;
+# nested ternary operatior:
+	return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+			  
+# object freezing: and now it won't change at all ( for constants)
+	Object.freeze(a)
+# concatinating: 
+	arr1.concat(arr2)
+
+
+#arrow functions:
+	var myConcat = (arr1, arr2) => arr1.concat(arr2);
+		calling it like console.log(myConcat([1,2],[3,4,5]));
+		the result is [1,2,3,4,5]
+# Number.isInteger(num)
+
+
+# rest operator
+	instead of arguments for functions U can put " ...args "
+# copying arrays
+	arr2 = [...arr1]
+# how to assing objects into variables not one by one?
+	var voxel = {x:1 , y:2, z:3}
+	const {x:a, y:b, z:c} = voxel
+# const [x , , y] = [1 , 2 , 3] 
+	meaning x = 1  and y = 3
+# importing / getting only what U need and throw the rest away:
+const voxel = {x:1 , y:2, z:3}
+	function half(voxel.x , voxel.y) orrrrrrrrrrrrr function half({x,y})
+	and then instead of calling voxel.x u can just call x
+#using `` instead of " " for strings and U can add ${name} variables like this in the middle
+# writing in a concise way:
+	const createPerson = (name, age, gender) => ({name, age, gender})
+	gives an object with these keys and these variables as values
+#get and set 
+#a.toUpperCase()
+#import and export 
+	 const capitalizeString = str => str.toUpperCase()
+	 export {capitalizeString}
+	 export const foo = "bar"
+	import {capitalizeString} from "./string_function.js"
+	use * to import everything that is exported:
+	import * as babaloo from "capitalizseString.js"
+# const years = new date().getFullYear() ---------- gives a 4 digit year
+#classes and subclasses:
+
+
+
+
+
+
+class Book {
+  constructor(title, author, year) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
+  getSummary() {
+    return `${this.title} was written by ${this.author} in 
+        ${this.year};`;
+  }
+}
+class Magazine extends Book {
+  constructor(title, author, year, month) {
+    super(title, author, year);
+    this.month = month;
+  }
+}
+const mag1 = new Magazine("Mag one", "John Doe", "2018", "september");
+console.log(mag1.getSummary());
+	

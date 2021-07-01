@@ -1,0 +1,41 @@
+# openning a page , it slides in:
+.stats {
+  animation: slideInFromBottom 1s ease-in;
+}
+
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+#diagnol lines: position must be absolute inside a relative container
+
+.white {
+  position: absolute;
+  height: 8rem;
+  bottom: -6rem;
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+}
+
+#when U hover it comes up:
+
+.languages .card:hover {
+  transform: translateY(-15px);
+  
+  
+# drawing a circle: 
+	border-radius: 50%
+	
+# drawing a rectangle with 4 different colors in it on each side:
+	width and height must be set to 0 and then give the borders of each side
+	 lots of thickness and different colors
