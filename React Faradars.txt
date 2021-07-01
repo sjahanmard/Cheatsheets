@@ -1,0 +1,29 @@
+#when we wanna change the state inside of a class we have to use setState:
+	this.setState({message:"sag khor"})
+	
+#life cycle methods : mounting- unmounting - updating - error handling
+	mounting:
+		constructor
+		render
+		componentDidMount
+	updating: when data is changed and we need rerender
+		shouldComponentUpdate: default is set to True
+		render
+		componentDidUpdate
+	unmounting: we use them when one component is being removed from the dom
+		for exam
+		componentWillUnmount
+	error-handling:
+		componentDidCatch
+#hooks
+	useState:
+		const [songs, setSong] = useState([{title:'music one', id: 1}
+											{title: 'music two' , id :2}])
+		{songs.map(song => <li key={song.id}>{song.title}</li>)}
+	useEffect:
+# we can have conditionals using &&
+	return this.state.isLoggedIn && <div> Welcome </div>
+
+		
+		
+	
