@@ -1,0 +1,402 @@
+:root {
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+  --less-dark-color: #b1b1b1;
+}
+html {
+  font-size: 62.5;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+img {
+  width: 100%;
+}
+
+code,
+pre {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar   */
+.navbar {
+  background: var(--primary-color);
+  color: #fff;
+  height: 6rem;
+  animation: slideInFromTop 1s ease-in;
+}
+
+.flex {
+  display: flex;
+}
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 1rem;
+  margin: 0.8rem;
+}
+
+.navbar a:hover {
+  border-bottom: #fff 0.1rem solid;
+}
+.flex {
+  justify-content: space-between;
+
+  align-items: center;
+}
+/* Showcase Showcase Showcase Showcase Showcase Showcase Showcase Showcase Showcase Showcase Showcase Showcase   */
+.showcase {
+  height: 25rem;
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.showcase h1 {
+  font-size: 3rem;
+  font-weight: lighter;
+}
+
+.showcase .grid {
+  grid-template-columns: 60% auto;
+  gap: 3rem;
+  overflow: visible;
+}
+.showcase .text {
+  animation: slideInFromLeft 1s ease-in;
+}
+
+.card {
+  background: #fff;
+  height: 22rem;
+  width: 22rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 5rem;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+  z-index: 100;
+  animation: slideInFromRight 1s ease-in;
+}
+/* position relative is given here to later on with top=5rem push down the dar*/
+.card h2 {
+  color: var(--dark-color);
+}
+
+.showcase .text .btn {
+  background: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px #fff solid;
+  padding: 0.8rem;
+}
+
+.card .btn {
+  background: var(--primary-color);
+  color: white;
+  border-radius: 5px;
+  width: 6rem;
+  cursor: pointer;
+  padding: 0.6rem;
+}
+.card input {
+  margin: 1rem;
+  border: 0;
+  border-bottom: 1px solid var(--less-dark-color);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+.card input:focus {
+  outline: none;
+}
+/* when U want a diagnol line , creat a container with relative positon and then create an empty container within that with absolute position then skew it   */
+.whitecontainer {
+  position: relative;
+}
+.white {
+  position: absolute;
+  height: 8rem;
+  bottom: -6rem;
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+}
+/* Stats Stats Stats Stats Stats Stats Stats Stats Stats Stats Stats Stats   */
+.stats {
+  padding-top: 10rem;
+  animation: slideInFromBottom 1s ease-in;
+}
+
+.stats .images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  text-align: center;
+  margin: 7rem auto;
+  justify-items: center;
+}
+.stats .images .imagetext {
+  border: 1px solid var(--less-dark-color);
+  width: 5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: 3px 3px 3px var(--less-dark-color);
+  font-size: 1.5rem;
+}
+.stats .text {
+  font-size: 1rem;
+  width: 40rem;
+  margin: auto;
+  text-align: center;
+}
+/* slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan   */
+
+.slogan .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  height: 100%;
+}
+.slogan .container > *:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.slogan .container .text {
+  box-shadow: 3px 3px 10px var(--less-dark-color);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+/* Cloud Cloud Cloud Cloud Cloud Cloud Cloud Cloud Cloud Cloud Cloud Cloud   */
+.cloud {
+  background: var(--primary-color);
+}
+.cloud .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 4fr 3fr;
+  text-align: center;
+  align-content: space-between;
+}
+.cloud .container h2 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.cloud .container p {
+  font-size: 1rem;
+  width: 600px;
+  color: #fff;
+}
+
+.cloud .container a {
+  background: var(--dark-color);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+}
+/* languages languages languages languages languages languages languages languages languages languages languages languages   */
+
+.languages .container {
+  height: 20rem;
+  overflow: visible;
+  width: 70rem;
+}
+.languages .text {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: thin;
+}
+
+.languages .logos {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.languages .card {
+  height: 9rem;
+  width: 7rem;
+  padding: 1rem 1.5rem;
+  margin: 0 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  transition: transform 0.2s ease-in;
+}
+.languages .card:hover {
+  transform: translateY(-15px);
+}
+.languages .card h4 {
+  padding-bottom: 1rem;
+}
+/* footing footing footing footing footing footing footing footing footing footing footing footing   */
+.footing {
+  background: var(--dark-color);
+}
+.footing .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 10rem;
+  color: #fff;
+  align-content: center;
+  justify-content: center;
+  height: 10rem;
+}
+
+.footing .container .logos {
+  color: #fff;
+  justify-items: center;
+  align-content: center;
+  padding-right: 0;
+  padding-left: 10rem;
+}
+
+.footing .container .copywrite {
+  font-size: 1rem;
+}
+.footing .container .home {
+  text-align: center;
+  padding-top: 1rem;
+}
+.footing .container a {
+  color: #fff;
+}
+.footing .container li {
+  padding: 0.2rem;
+}
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Mobile */
+@media (max-width: 800px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .showcase .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .stats {
+    margin-top: 12rem;
+  }
+  .stats .text {
+    width: 25rem;
+  }
+  .stats .images {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
