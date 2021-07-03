@@ -24,7 +24,7 @@ body {
 .container {
   max-width: 80%;
   margin: 0 auto;
-  overflow: auto;
+  overflow: visible;
   padding: 0 4rem;
   align-items: center;
   justify-content: center;
@@ -50,6 +50,7 @@ a {
   justify-items: center;
   animation: slideInFromTop 1s ease-in;
 }
+
 
 .navbar ul {
   display: flex;
@@ -98,3 +99,42 @@ a {
   }
   
 }
+@media (max-width: 1100px) {
+  .navbar .container {
+max-width: 100%; 
+}
+}
+@media (max-width: 850px) {
+  .navbar .container {
+display: grid; 
+justify-content: center;
+align-items: center;
+}
+}
+
+@media (max-width: 500px) {
+  .navbar .container {
+display: flex;
+flex-direction: column; 
+}
+.navbar {
+height: 16rem;
+}
+.navbar ul {
+    flex-direction: column;
+  } 
+.navbar .logo {
+  margin-bottom: 2rem;
+}
+.navbar li{
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  margin:.5rem;
+  text-align: center;
+}
+.navbar a:hover {
+  border-bottom:none;
+
+}
+}
+
