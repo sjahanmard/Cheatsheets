@@ -64,20 +64,37 @@ a {
 }
 .navbar a:hover {
   border-bottom: solid #fff 0.1rem;
+  border-color:rgb(65, 202, 30);
+  color:rgb(65, 202, 30);
+  transition:all 1s ease-in;
+
 }
 .navbar .logo {
   background-color: rgb(153, 82, 153);
-  background-image: linear-gradient(to top, red 0%, purple 100%);
+  background-image: linear-gradient(to top, rgb(182, 123, 164) 0%, rgb(131, 52, 131) 100%);
   background-size: 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  -webkit-background-color: transparent;
-  -moz-background-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
   display: flex;
-  font-size: 3rem;
+  font-size: 4rem;
+}
+.navbar .logo:hover{
+  background-image: linear-gradient(to top, rgb(83, 221, 152) 0%, rgb(65, 202, 30) 100%);
+  
 }
 .logo i {
   margin-right: 1rem;
   align-self: center;
+}
+@keyframes slideInFromTop {
+  0% {
+    transform:translateY(-100%);
+  }
+  100% {
+    transform:translateY(0);
+  }
+  
 }
