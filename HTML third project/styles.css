@@ -1,0 +1,83 @@
+:root {
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+  --less-dark-color: #b1b1b1;
+}
+html {
+  font-size: 62.5;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 4rem;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar   */
+.navbar {
+  background: var(--primary-color);
+  color: #fff;
+  height: 10rem;
+  justify-items: center;
+  animation: slideInFromTop 1s ease-in;
+}
+
+.navbar ul {
+  display: flex;
+}
+.navbar li {
+  margin: 0 2rem;
+}
+.navbar a {
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+}
+.navbar a:hover {
+  border-bottom: solid #fff 0.1rem;
+}
+.navbar .logo {
+  background-color: rgb(153, 82, 153);
+  background-image: linear-gradient(to top, red 0%, purple 100%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-color: transparent;
+  -moz-background-color: transparent;
+  display: flex;
+  font-size: 3rem;
+}
+.logo i {
+  margin-right: 1rem;
+  align-self: center;
+}
