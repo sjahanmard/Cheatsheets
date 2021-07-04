@@ -312,7 +312,8 @@ a {
   .main .circle {
     display: none;
   }
-  .footer a {
-    margin: 0.5rem;
+
+  .footer .container {
+    padding: 2rem 2rem;
   }
 }
