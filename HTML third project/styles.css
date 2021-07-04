@@ -22,7 +22,7 @@ body {
   line-height: 1.6;
 }
 .container {
-  max-width: 80%;
+  max-width: 110rem;
   margin: 0 auto;
   overflow: visible;
   padding: 0 4rem;
@@ -43,7 +43,7 @@ a {
   align-items: center;
 }
 /* Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar   */
-.navbar {
+.navbar .container {
   background: var(--primary-color);
   color: #fff;
   height: 10rem;
@@ -116,10 +116,9 @@ align-items: center;
   .navbar .container {
 display: flex;
 flex-direction: column; 
-}
-.navbar {
 height: 16rem;
 }
+
 .navbar ul {
     flex-direction: column;
   } 
@@ -134,6 +133,12 @@ height: 16rem;
 }
 .navbar a:hover {
   border-bottom:none;
+  color:#fff;
+
+}
+.navbar li:hover {
+  background: #5cb85c;
+  transition:all 1s ease-in;
 
 }
 }
