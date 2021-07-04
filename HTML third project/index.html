@@ -28,5 +28,42 @@
         </ul>
       </div>
     </div>
+    <!-- Main Main Main Main Main Main Main Main Main Main Main Main Main Main Main  -->
+    <div class="main">
+      <div class="container">
+        <div class="section">
+          <div class="concealer"></div>
+          <img src="/images/picture.png" alt="" />
+          <div class="circle" id="circle">
+            <h2 class="info one">HTML</h2>
+            <h2 class="info two">CSS</h2>
+            <h2 class="info three">JavaScript</h2>
+            <h2 class="info four">ReactJS</h2>
+          </div>
+        </div>
+        <div class="controls">
+          <i class="fas fa-angle-up" id="up"></i>
+          <p>Spin</p>
+          <i class="fas fa-angle-down" id="down"></i>
+        </div>
+      </div>
+    </div>
+    <script>
+      var circle = document.getElementById("circle");
+      var up = document.getElementById("up");
+      var down = document.getElementById("down");
+      var rotateValue = circle.style.transform;
+      var rotateSum;
+      up.onclick = () => {
+        rotateSum = rotateValue + "rotate(-90deg)";
+        circle.style.transform = rotateSum;
+        rotateValue = rotateSum;
+      };
+      down.onclick = () => {
+        rotateSum = rotateValue + "rotate(90deg)";
+        circle.style.transform = rotateSum;
+        rotateValue = rotateSum;
+      };
+    </script>
   </body>
 </html>

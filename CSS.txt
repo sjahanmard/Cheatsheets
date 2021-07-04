@@ -357,5 +357,7 @@ preserves the text spaces, line breaks, tabs, and other formatting characters
   visibility:hidden;
   height:0
   }
-  
+  #if U dont add a position to an element and it is set as it will be in the default mode
+	to static , U cannot give it a z-index
+	
   

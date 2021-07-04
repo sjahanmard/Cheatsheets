@@ -22,7 +22,7 @@ body {
   line-height: 1.6;
 }
 .container {
-  max-width: 110rem;
+  max-width: auto;
   margin: 0 auto;
   overflow: visible;
   padding: 0 4rem;
@@ -43,7 +43,6 @@ a {
   align-items: center;
 }
 /* Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar Navbar   */
-
 .navbar .container {
   background-image: linear-gradient(
     to bottom,
@@ -58,8 +57,6 @@ a {
 
 .navbar ul {
   display: flex;
-  position: relative;
-  z-index: 100;
 }
 .navbar li {
   margin: 0 2rem;
@@ -112,29 +109,45 @@ a {
 }
 
 /* Main Main Main Main Main Main Main Main Main Main Main Main Main Main Main Main   */
-
-/*we have a container which is made of two parts.section and controls. we set the container to a grid with 2 columns , so section will be */
-/*in the first column and controls in the second one.We need to set the section to position relative.*/
-/* Now in the first column we have 3 elements.IMG , circle and the concealer */
-/*in the info part we also have 4 parts. we set all those 3 except for img:relative and all these 4 to position absolute and because their parent is set to relative ... */
-
 .main .container {
   background-image: linear-gradient(
-    to top,
-    rgb(211, 86, 205),
-    var(--primary-color)
+    to bottom,
+    var(--primary-color),
+    rgb(26, 26, 100)
   );
-  height: 50rem;
-  color: #fff;
-  justify-items: center;
-  padding: 0;
+  height: 40rem;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "section controls";
+  grid-template-areas: "gr controls";
+}
+.main .grid {
+  position: relative;
+}
+.main .circle {
+  position: relative;
+  height: 40rem;
+  width: 40rem;
+  border-radius: 50%;
+  transform: rotate(0deg);
+  transition: 1s;
+  grid-area: gr;
+}
+.main img {
+  position: absolute;
+  z-index: 999;
+  transform: translate3d(-2rem, -3rem, 0);
+  grid-area: gr;
 }
 .main .controls {
+  right: 8%;
+  top: 20%;
+  height: 5rem;
   font-size: 4rem;
+  color: #fff;
   text-align: center;
+  grid-area: controls;
+  right: 30rem;
 }
 .main .controls .fas {
   cursor: pointer;
@@ -143,82 +156,54 @@ a {
   color: #5cb85c;
   transition: all 0.5s ease-in;
 }
-.main .section {
-  grid-area: section;
-  position: relative;
-}
-.circle {
+.main .info {
   position: absolute;
   color: #fff;
-  height: 40rem;
-  width: 40rem;
-  top: 5rem;
-  border-radius: 50%;
-  transition: 1s;
 }
 .main .one {
-  position: absolute;
-  left: 40rem;
-  bottom: 20rem;
+  left: 18%;
+  top: 45%;
+  transform: rotate(-180deg);
 }
 .main .two {
-  position: absolute;
-  left: 17rem;
-  bottom: 40rem;
+  left: 45%;
+  top: 20%;
   transform: rotate(-90deg);
 }
 .main .three {
-  position: absolute;
-  left: -6rem;
-  bottom: 20rem;
-  transform: rotate(-180deg);
-}
-.main .four {
-  position: absolute;
-  left: 17rem;
-  bottom: -5rem;
+  left: 40%;
+  top: 70%;
   transform: rotate(-270deg);
 }
-.main .concealer {
+.main .four {
+  left: 70%;
+  top: 45%;
+}
+.concealer {
   position: absolute;
+  left: -20%;
+  top: -25%;
   width: 0;
   height: 0;
-  border-top: 26rem solid #fff;
-  border-bottom: 26rem solid #fff;
-  border-right: 26rem solid transparent;
-  border-left: 26rem solid #fff;
-  margin: 0;
-  top: -3rem;
-  left: -10rem;
-}
-.section img {
-  position: relative;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  margin: 0;
+  transform: translate3d(10rem, 10rem, 0);
+  border-top: 20rem solid #fff;
+  border-bottom: 20rem solid #fff;
+  border-right: 50rem solid transparent;
+  border-left: 20rem solid #fff;
+  grid-area: gr;
 }
 
-@media (max-width: 875px) {
+@media (max-width: 850px) {
   .navbar .container {
     display: grid;
     justify-content: center;
     align-items: center;
   }
-  .main .concealer {
-    display: none;
-  }
-  .main .info {
-    display: none;
-  }
   .main .controls {
-    display: none;
+    visibility: hidden;
   }
-  .main img {
-    transform: translateY(-10rem);
-  }
-  .main .container {
-    height: 30rem;
+  .main .concealer {
+    transform: translate3d(5rem, 10rem, 0);
   }
 }
 
@@ -233,6 +218,7 @@ a {
   }
   .navbar ul {
     flex-direction: column;
+    z-index: 1000000;
   }
   .navbar .logo {
     margin-bottom: 0rem;
@@ -251,7 +237,15 @@ a {
     background-color: #5cb85c;
     transition: all 1s ease-in;
   }
-  .main .circle {
-    display: none;
+  .main .concealer {
+    visibility: hidden;
+  }
+  .main .info {
+    visibility: hidden;
+  }
+  .main img {
+    position: relative;
+    z-index: 999;
+    transform: translate3d(-2rem, -3rem, 0);
   }
 }
