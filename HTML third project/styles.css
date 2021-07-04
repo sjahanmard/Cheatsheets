@@ -131,6 +131,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "section controls";
+  animation: slideInFromBottom 1s ease-in;
 }
 .main .controls {
   font-size: 4rem;
@@ -147,6 +148,7 @@ a {
   grid-area: section;
   position: relative;
 }
+
 .circle {
   position: absolute;
   color: #fff;
@@ -199,7 +201,55 @@ a {
   left: 0;
   margin: 0;
 }
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
+/* cards  cards cards cards  cards cards cards  cards cards cards  cards cards cards  cards cards cards  cards cards */
+.cards {
+  max-width: 110rem;
+  margin: auto;
+}
+.cards .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 8rem 2rem;
+}
+.cards .card {
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-in;
+  width: 10rem;
+  text-align: center;
+  z-index: 1001;
+}
+.cards .card:hover {
+  transform: translateY(-1rem);
+}
+
+/* footer  footer footer footer  footer footer footer  footer footer footer  footer footer footer  footer footer footer  footer footer */
+.footer .container {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(211, 86, 205),
+    rgb(115, 46, 117)
+  );
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 10rem;
+}
+.footer a {
+  color: #fff;
+  margin: 1rem;
+}
 @media (max-width: 875px) {
   .navbar .container {
     display: grid;
@@ -220,6 +270,13 @@ a {
   }
   .main .container {
     height: 30rem;
+  }
+  .cards .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cards .card {
+    margin: 1rem;
   }
 }
 
@@ -254,5 +311,8 @@ a {
   }
   .main .circle {
     display: none;
+  }
+  .footer a {
+    margin: 0.5rem;
   }
 }
