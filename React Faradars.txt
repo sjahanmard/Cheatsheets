@@ -244,3 +244,14 @@ class App extends Component {
 
 
 export default App;
+
+#using images is a little different in react , we have to use this syntax for it
+      <img src={require("./images/logos/clojure.png").default} alt="" />
+#########################################################################################
+					Hooks: in functional components
+import {useState} from 'react'
+in the function define it like:
+	const [songs, setSongs] = useState(
+	[{title:'Music one', id:1},{title:'Music two', id:2}]
+	then U can just use it like , {song.id} and use setSong to change the songs
+	

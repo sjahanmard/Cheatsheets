@@ -158,6 +158,7 @@ a {
   border-radius: 50%;
   transition: 1s;
   font-size: 5rem;
+  transform: 0deg;
 }
 .main .one {
   position: absolute;
