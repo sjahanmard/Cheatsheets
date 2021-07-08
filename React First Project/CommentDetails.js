@@ -1,5 +1,4 @@
 import React from 'react';
-import  { CommentContext } from './CommentsContext';
 
 const CommentDetail = ({comment}) => {
     return(
