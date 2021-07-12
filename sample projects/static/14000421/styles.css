@@ -13,3 +13,27 @@ body::before {
     height: 100%;
     border-radius: 10px;
 }
+.navbar {
+    animation: slideInFromTop 1s ease-in;
+  }
+
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+#showcase {
+    animation: slideInFromBottom 1s ease-in;
+  }
+
+@keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
