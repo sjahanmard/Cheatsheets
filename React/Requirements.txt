@@ -1,0 +1,21 @@
+react project requirements:
+
+
+Visual Studio code
+node js
+yarn
+extensions of vs code (Live server, pretier, simple react snippet)
+creating a react app:
+	go to th directory in cdm and :
+	npx create-react-app project1
+	to start the project go to the location in cmd and : 
+	yarn start
+
+imports in the react files:
+	import React from 'react'       in all the pages
+	import other pages in  App.js like:
+		import Person from "./Person"
+	import {Route, BrowserRouter as Router, Link} from 'react' in App.js
+	first instal dom by : yarn add react-router-dom
+	
+	

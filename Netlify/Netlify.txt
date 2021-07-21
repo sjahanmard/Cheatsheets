@@ -1,0 +1,6 @@
+make sure U have installed netlify using npm
+for react projects :
+
+after running yarn build in the directory:
+run netlify build
+then run netlify deploy

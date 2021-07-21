@@ -1,3 +1,0 @@
-after running yarn build in the directory:
-run netlify build
-then run netlify deploy
