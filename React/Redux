@@ -1,0 +1,32 @@
+# How to set up redux for your react app
+
+
+
+1.App.js
+	import the provider 
+	import the store
+	wrap components in a Provider and pass the store ={store} as a prop
+2.store.js
+	just use it as it is, intact.
+3.reducers folder
+	index.js:
+		Based on the reducers that U have , U need to first import them and then assign them to a new variable.
+	somethingReducer.js:
+		import all the action types defined in actions/types.js 
+		define a switch-case just like the template for all the actions that U need to be defined
+4.actions folder
+	types.js:
+		define all the types of actions that U want to have here and export them by default
+	somethingActions.js
+		import all the types from the types.js file
+		write the codes of every action as U want it to happen like the template
+		
+5.Component
+	in the component that U want to use the actions (Posts or PostForm , in the template), just:
+	import connect
+	import the action that U want to use from somethingActions
+	define a mapStatetoProps at the end of the file like in the template ///////////////////////////////////////////////////////////////
+	export it like this : export default connect(mapStateToProps, { fetchPosts })(Posts)
+
+	
+
