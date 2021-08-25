@@ -1,0 +1,10 @@
+import React from "react";
+
+const withVariable =
+  (WrappedComponent) =>
+  (...props) => {
+    const age = 26 * 2;
+    return <WrappedComponent {...props} age={age} />;
+  };
+
+export default withVariable;
