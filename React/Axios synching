@@ -1,0 +1,27 @@
+import axios from "axios";
+var client = {};
+
+const Component = () => {
+  const waiting = async () => {
+    await axios
+      .get("http://10.10.10.114:8000/api/user/profile/", {
+        headers: {
+          Authorization: "Token 2841a129b5c7477decdb9a77a02ee37f8959bf99",
+        },
+      })
+      .then((res) => {
+        Object.assign(client, res.data);
+        console.log("ghable 10 ", client);
+        console.log("dadadaaaaaaaaaaaaaaaaaaa", res.data);
+        console.log("ghable 11 ", client.email);
+      });
+
+    console.log("client", client);
+    console.log("client.email", client.email);
+  };
+  waiting();
+
+  return <h1></h1>;
+};
+
+export default Component;
