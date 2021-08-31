@@ -1,0 +1,7 @@
+the whole process gets delayed with this
+      await new Promise((r) => setTimeout(r, 500));
+      
+async and await
+
+this action and only this action happens after one second of reading it
+      setTimeout(() => setClientLoggedIn(props.client.display_name), 1000);
