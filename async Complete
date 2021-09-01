@@ -1,0 +1,30 @@
+import { useState } from "react";
+
+const Component = () => {
+  const [state, setState] = useState("");
+
+  const fanction = async () => {
+    const testing = async () => {
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          setState(() => true);
+          if (state) {
+            resolve("done");
+          } else if (!state) {
+            reject("not done");
+          }
+        }, 2000);
+      });
+      let result = await promise;
+      console.log(result);
+      console.log("avaliiiii ");
+    };
+    await testing();
+    console.log("akhare akhar");
+  };
+  fanction();
+
+  return <h1></h1>;
+};
+
+export default Component;
