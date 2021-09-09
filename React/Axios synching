@@ -1,27 +1,28 @@
 import axios from "axios";
-var client = {};
+import { SIGN_UP_FIRST, SIGN_UP_SECOND_ERROR } from "./types";
 
-const Component = () => {
-  const waiting = async () => {
-    await axios
-      .get("http://10.10.10.114:8000/api/user/profile/", {
-        headers: {
-          Authorization: "Token 2841a129b5c7477decdb9a77a02ee37f8959bf99",
-        },
-      })
-      .then((res) => {
-        Object.assign(client, res.data);
-        console.log("ghable 10 ", client);
-        console.log("dadadaaaaaaaaaaaaaaaaaaa", res.data);
-        console.log("ghable 11 ", client.email);
+export const signUpFirst = (value) => async (dispatch) => {
+  var error;
+  await axios
+    .post("http://10.10.10.103:8000/api/user/register/", value)
+    .then(async (res) => {
+      error = {};
+      dispatch({
+        type: SIGN_UP_SECOND_ERROR,
+        payload: error,
       });
-
-    console.log("client", client);
-    console.log("client.email", client.email);
-  };
-  waiting();
-
-  return <h1></h1>;
+    })
+    .catch(async (err) => {
+      error = err;
+      dispatch({
+        type: SIGN_UP_SECOND_ERROR,
+        payload: err,
+      });
+    });
+  if (error.response === undefined) {
+    await dispatch({
+      type: SIGN_UP_FIRST,
+      payload: value,
+    });
+  }
 };
-
-export default Component;
