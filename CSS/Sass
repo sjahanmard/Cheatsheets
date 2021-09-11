@@ -1,0 +1,36 @@
+---------------------------------1-variables-----------------------------------------------
+$gray: #123456
+body{
+  color:$gray
+}
+
+
+
+$colors:(
+  primary: blue,
+   secondary:green
+);
+body{
+  background:map-get($colors,primary);
+}
+---------------------------------2-functions-----------------------------------------------
+@function color ($color-name){
+  @return map-get($colors, $colors-name)
+}
+body{
+  background:color(primary);
+}
+---------------------3-media query----------------------------------------------------------
+@mixin desktop {
+  @media (min-width:#{$desktop}){
+    @content;
+   }
+}
+
+body{
+  ul{
+    @include desktop{
+      display:flex;
+      }
+     }
+  }
