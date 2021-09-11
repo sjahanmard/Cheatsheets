@@ -15,7 +15,7 @@ body{
 }
 ---------------------------------2-functions-----------------------------------------------
 @function color ($color-name){
-  @return map-get($colors, $colors-name)
+  @return map-get($colors, $color-name)
 }
 body{
   background:color(primary);
