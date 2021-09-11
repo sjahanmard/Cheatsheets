@@ -21,6 +21,7 @@ body{
   background:color(primary);
 }
 ---------------------3-media query----------------------------------------------------------
+$desktop:840px
 @mixin desktop {
   @media (min-width:#{$desktop}){
     @content;
