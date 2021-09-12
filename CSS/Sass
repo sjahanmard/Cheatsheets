@@ -35,3 +35,12 @@ body{
       }
      }
   }
+---------------------4-extending ------------------------------------------------
+.sidebar{
+  color:red
+}
+
+h1{
+  @extends .sidebar;
+  font-size:20px;
+}
