@@ -1,0 +1,73 @@
+*, *::before , *::after {
+	box-sizing:border-box
+}
+
+html{
+	font-size:62.5%
+	}
+
+
+after using float property we need to clear it like this: ( add clearfix class to the parent element):
+.clearfix::after {
+	content:'';
+	display:block;
+	clear:both;
+}
+
+grid:
+body:{
+	grid-template: 100px 100px 100px / 2fr 3fr;
+	grid-template-areas: "head head"
+						"body right-body"
+						"footer footer"
+}
+
+footer:{
+	grid-area:footer
+}
+
+p{
+	width:50ch;
+	whitespace:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+p{
+	column-count:2s
+}
+
+
+
+body{
+	background: url (...)
+	background-attachment:fixed
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:100vh or more;
+}
+
+input[type="text"] {
+	transition: border-color .1s, box-shadow .1s;
+}
+
+to get rid of the line when a button is selected, especially if you have border-radius:
+button{
+	outline:0
+}
+
+input----> autoFocus
+
+
+suggestion lists: (similiar to dropdown lists)
+<form>
+	<input type="text" list"countries"/>
+	<datalist id="countries">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+	</datalist>
+</form>
+
+
+
+formspree: file 53
