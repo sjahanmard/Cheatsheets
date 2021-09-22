@@ -1,0 +1,72 @@
+
+1-npm i -D enzyme
+2-npm i -D enzyme-adapter-react-16
+
+
+3-in setupTests.js file in src folder, copy these:
+
+	import { configure } from "enzyme";
+	import Adapter from "enzyme-adapter-react-16";
+	
+	configure({ adapter: new Adapter() });
+
+
+
+
+
+
+
+4- in the testing component of yours:
+
+import {shallow} from 'enzyme'
+
+-------------------------------------------------------------------------
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import { shallow } from "enzyme";
+import List from "./List";
+
+describe("App", () => {
+  let appWrapper;
+  beforeAll(() => {
+    appWrapper = shallow(<App />);
+  });
+  it("ul in App component", () => {
+    const appList = appWrapper.find("ul");
+    expect(appList).toBeDefined();
+  });
+  it("state is ok", () => {
+    const listWrapper = appWrapper.find(List);
+    const listProp = listWrapper.props().dada;
+    expect(listProp).toBe("salam");
+  });
+});
+---------------------------------------------------------------------------
+import logo from "./logo.svg";
+import "./App.css";
+import List from "./List";
+
+function App() {
+  return (
+    <div className="App">
+      <ul></ul>
+      <List dada="salam" />
+    </div>
+  );
+}
+
+export default App;
+---------------------------------------------------------------------------
+const List = (props) => {
+  return <div>{props.dada}</div>;
+};
+
+export default List;
+
+
+
+
+
+
+
+
