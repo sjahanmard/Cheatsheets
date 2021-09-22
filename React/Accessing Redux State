@@ -1,0 +1,9 @@
+3 ways to access redux's state in components:
+
+
+1-mapStateToProps
+
+2-store.subscribe() and store.getState()
+
+
+3.useSelector()
