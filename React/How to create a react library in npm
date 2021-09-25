@@ -1,0 +1,27 @@
+1-create your file but export it like this:
+
+    import { useState } from "react";
+    const useForm = () => {
+      const [state, setState] = useState({});
+      const handleSubmit = (submitCallback) => (e) => {
+        e.preventDefault();
+        submitCallback(state);
+      };
+      const handleChange = (e) => {
+        setState((prevState) => ({
+          ...prevState,
+          [e.target.name]: e.target.value,
+        }));
+      };
+      return [state, handleChange, handleSubmit];
+    };
+
+    module.exports.useForm = useForm;
+    
+2- create a README.txt and explain everything in it
+3-add it to your github repository
+4- npm init
+5-npm publish
+6- to use it:
+    install the package 
+    then import whatever you have exported and use it in your code
