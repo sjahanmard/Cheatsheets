@@ -1,0 +1,4 @@
+var url = new URL(window.location.href);
+var basePath = url.origin;
+
+export default basePath;
